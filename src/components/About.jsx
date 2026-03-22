@@ -22,7 +22,7 @@ function About() {
 
     return (
         <section id="about" style={{
-            padding: '80px 2rem',
+            padding: '60px 1rem',
             background: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
             position: 'relative'
         }}>
@@ -34,9 +34,9 @@ function About() {
                 transition: 'all 0.8s ease-out'
             }}>
                 {/* Section Header */}
-                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                     <h2 style={{
-                        fontSize: '2.5rem',
+                        fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
                         fontWeight: 'bold',
                         marginBottom: '1rem',
                         background: 'linear-gradient(135deg, #8b5cf6, #d946ef)',
@@ -57,18 +57,19 @@ function About() {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '4rem',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '2rem',
                     alignItems: 'center'
                 }}>
                     {/* Left Column - Image/Illustration */}
                     <div style={{
                         textAlign: 'center',
-                        position: 'relative'
+                        position: 'relative',
+                        order: window.innerWidth <= 768 ? 2 : 1
                     }}>
                         <div style={{
-                            width: '300px',
-                            height: '300px',
+                            width: 'min(250px, 70vw)',
+                            height: 'min(250px, 70vw)',
                             margin: '0 auto',
                             background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(217, 70, 239, 0.1))',
                             borderRadius: '50%',
@@ -78,7 +79,7 @@ function About() {
                             position: 'relative'
                         }}>
                             <div style={{
-                                fontSize: '8rem',
+                                fontSize: 'clamp(5rem, 15vw, 8rem)',
                                 animation: 'float 3s ease-in-out infinite'
                             }}>
                                 🚀
@@ -88,8 +89,8 @@ function About() {
                                 position: 'absolute',
                                 top: '-10px',
                                 right: '-10px',
-                                width: '50px',
-                                height: '50px',
+                                width: 'clamp(40px, 10vw, 50px)',
+                                height: 'clamp(40px, 10vw, 50px)',
                                 background: 'linear-gradient(135deg, #8b5cf6, #d946ef)',
                                 borderRadius: '50%',
                                 opacity: 0.2,
@@ -99,8 +100,8 @@ function About() {
                                 position: 'absolute',
                                 bottom: '-10px',
                                 left: '-10px',
-                                width: '70px',
-                                height: '70px',
+                                width: 'clamp(50px, 12vw, 70px)',
+                                height: 'clamp(50px, 12vw, 70px)',
                                 background: 'linear-gradient(135deg, #d946ef, #8b5cf6)',
                                 borderRadius: '50%',
                                 opacity: 0.2,
@@ -110,7 +111,9 @@ function About() {
                     </div>
 
                     {/* Right Column - Content */}
-                    <div>
+                    <div style={{
+                        order: window.innerWidth <= 768 ? 1 : 2
+                    }}>
                         {/* Enthusiasm Badge */}
                         <div style={{
                             display: 'inline-block',
@@ -126,14 +129,14 @@ function About() {
                                 backgroundClip: 'text',
                                 color: 'transparent',
                                 fontWeight: '600',
-                                fontSize: '0.9rem'
+                                fontSize: '0.85rem'
                             }}>
                                 🌱 Just Starting My Journey
                             </span>
                         </div>
 
                         <h3 style={{
-                            fontSize: '1.8rem',
+                            fontSize: 'clamp(1.5rem, 4vw, 1.8rem)',
                             fontWeight: 'bold',
                             color: '#1f2937',
                             marginBottom: '1rem'
@@ -142,7 +145,7 @@ function About() {
                         </h3>
 
                         <p style={{
-                            fontSize: '1.1rem',
+                            fontSize: 'clamp(1rem, 3vw, 1.1rem)',
                             color: '#4b5563',
                             lineHeight: '1.6',
                             marginBottom: '1.5rem'
@@ -153,10 +156,10 @@ function About() {
                         </p>
 
                         <p style={{
-                            fontSize: '1rem',
+                            fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                             color: '#6b7280',
                             lineHeight: '1.6',
-                            marginBottom: '2rem'
+                            marginBottom: '1.5rem'
                         }}>
                             Currently exploring modern web technologies and building projects to 
                             strengthen my skills. I believe that the best way to learn is by doing, 
@@ -167,13 +170,13 @@ function About() {
                         <div style={{
                             background: 'white',
                             borderRadius: '1rem',
-                            padding: '1.5rem',
-                            marginBottom: '2rem',
+                            padding: '1.25rem',
+                            marginBottom: '1.5rem',
                             boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
                             border: '1px solid rgba(139, 92, 246, 0.1)'
                         }}>
                             <h4 style={{
-                                fontSize: '1.1rem',
+                                fontSize: '1rem',
                                 fontWeight: 'bold',
                                 color: '#8b5cf6',
                                 marginBottom: '1rem'
@@ -183,14 +186,14 @@ function About() {
                             <div style={{
                                 display: 'flex',
                                 flexWrap: 'wrap',
-                                gap: '0.8rem'
+                                gap: '0.6rem'
                             }}>
                                 {['React', 'JavaScript', 'HTML/CSS', 'Node.js', 'Tailwind CSS', 'Git'].map((skill) => (
                                     <span key={skill} style={{
-                                        padding: '0.4rem 1rem',
+                                        padding: '0.35rem 0.9rem',
                                         background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(217, 70, 239, 0.05))',
                                         borderRadius: '50px',
-                                        fontSize: '0.9rem',
+                                        fontSize: '0.85rem',
                                         color: '#8b5cf6',
                                         fontWeight: '500'
                                     }}>
@@ -204,6 +207,7 @@ function About() {
                         <div style={{
                             display: 'flex',
                             gap: '1rem',
+                            flexDirection: window.innerWidth <= 480 ? 'column' : 'row',
                             flexWrap: 'wrap'
                         }}>
                             <div style={{
@@ -211,11 +215,12 @@ function About() {
                                 padding: '1rem',
                                 background: 'white',
                                 borderRadius: '0.75rem',
-                                border: '1px solid rgba(139, 92, 246, 0.1)'
+                                border: '1px solid rgba(139, 92, 246, 0.1)',
+                                textAlign: window.innerWidth <= 480 ? 'center' : 'left'
                             }}>
-                                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🎯</div>
-                                <h4 style={{ fontWeight: 'bold', color: '#1f2937', marginBottom: '0.5rem' }}>My Goal</h4>
-                                <p style={{ fontSize: '0.9rem', color: '#6b7280' }}>
+                                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🎯</div>
+                                <h4 style={{ fontWeight: 'bold', color: '#1f2937', marginBottom: '0.5rem', fontSize: '1rem' }}>My Goal</h4>
+                                <p style={{ fontSize: '0.85rem', color: '#6b7280' }}>
                                     Build real-world projects and become a skilled developer
                                 </p>
                             </div>
@@ -224,11 +229,12 @@ function About() {
                                 padding: '1rem',
                                 background: 'white',
                                 borderRadius: '0.75rem',
-                                border: '1px solid rgba(139, 92, 246, 0.1)'
+                                border: '1px solid rgba(139, 92, 246, 0.1)',
+                                textAlign: window.innerWidth <= 480 ? 'center' : 'left'
                             }}>
-                                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>💡</div>
-                                <h4 style={{ fontWeight: 'bold', color: '#1f2937', marginBottom: '0.5rem' }}>Mindset</h4>
-                                <p style={{ fontSize: '0.9rem', color: '#6b7280' }}>
+                                <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>💡</div>
+                                <h4 style={{ fontWeight: 'bold', color: '#1f2937', marginBottom: '0.5rem', fontSize: '1rem' }}>Mindset</h4>
+                                <p style={{ fontSize: '0.85rem', color: '#6b7280' }}>
                                     Always learning, always growing, always curious
                                 </p>
                             </div>
@@ -246,10 +252,21 @@ function About() {
                     0%, 100% { transform: scale(1); opacity: 0.2; }
                     50% { transform: scale(1.1); opacity: 0.3; }
                 }
+                
+                /* Responsive styles */
                 @media (max-width: 768px) {
-                    .grid-cols-2 {
-                        grid-template-columns: 1fr !important;
+                    #about {
+                        padding: 40px 1rem !important;
+                    }
+                    
+                    .grid-container {
                         gap: 2rem !important;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    #about {
+                        padding: 30px 1rem !important;
                     }
                 }
             `}</style>
